@@ -7,7 +7,7 @@ class puppetconf (
   $all_logdir = '/var/log/puppet',
   $all_vardir = '/var/lib/puppet',
   $all_rundir = '/var/run/puppet',
-  $all_ssldir = '$confdir/ssl',
+  $all_ssldir = '$vardir/ssl',
   $all_factpath = '$confdir/facter',
   $all_environment = undef,
   $ismaster = false,
