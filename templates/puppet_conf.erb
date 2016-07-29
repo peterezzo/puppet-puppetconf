@@ -1,0 +1,33 @@
+# this file is managed by puppet, local changes will be overwritten
+[main]
+<% if @all_logdir -%>
+logdir=<%= @all_logdir %>
+<% end -%>
+<% if @all_vardir -%>
+vardir=<%= @all_vardir %>
+<% end -%>
+<% if @all_rundir -%>
+rundir=<%= @all_rundir %>
+<% end -%>
+<% if @all_ssldir -%>
+ssldir=<%= @all_ssldir %>
+<% end -%>
+<% if @all_factpath -%>
+factpath=<%= @all_factpath %>
+<% end -%>
+<% if @all_environment -%>
+environment=<%= @all_environment %>
+<% end -%>
+<% if @ismaster -%>
+<% if @master_autosign -%>
+autosign=<%= @master_autosign %>
+<% end -%>
+<% if @master_dns_alt_names -%>
+dns_alt_names=<%= @master_dns_alt_names.join(',') %>
+<% end -%>
+
+[master]
+# These are needed when the puppetmaster is run by passenger
+ssl_client_header = SSL_CLIENT_S_DN
+ssl_client_verify_header = SSL_CLIENT_VERIFY
+<% end -%>
